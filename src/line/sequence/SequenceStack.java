@@ -14,7 +14,7 @@ import org.omg.CORBA.Object;
  @Version 1.0
  **/
 public class SequenceStack<T> {
-    private final int MaxSize = 100;
+    private final int MaxSize = 1000;
     private T[] stackList;
     private int top;
 
@@ -36,7 +36,7 @@ public class SequenceStack<T> {
         //越界需要进行扩容
         if(top == stackList.length-1){
             T[] tmpStack = (T[])new Object[2 * top + 2];
-            for(int i = 0; i < stackList.length; i++){
+            for(int i = 0; i <= top; i++){
                 tmpStack[i] = stackList[i];
             }
             stackList = tmpStack;
