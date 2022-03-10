@@ -34,6 +34,7 @@ public class SequenceQueue<T> {
                     tempQueue[i] = queueList[i];
                 }
             }else {
+                //队列已经出现循环的情况
                 int i, j=1;
                 for(i = front + 1; i < queueList.length; i++, j++){
                     tempQueue[j] = queueList[i];
